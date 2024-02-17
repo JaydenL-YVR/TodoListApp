@@ -8,14 +8,14 @@
 
 import React from 'react';
 import {
-    SafeAreaView,
-    StyleSheet,
-    Pressable,
-    View,
-    Text,
-    ScrollView,
-    TextInput,
-    Button
+  SafeAreaView,
+  StyleSheet,
+  Pressable,
+  View,
+  Text,
+  ScrollView,
+  TextInput,
+  Button
 } from 'react-native';
 
 import ToDoList from './components/ToDoList';
@@ -23,7 +23,7 @@ import ToDoForm from './components/ToDoForm';
 
 function App() {
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             <ToDoList style={styles.todolist} />
             <ToDoForm style={styles.todoform} />
         </SafeAreaView>
@@ -31,12 +31,17 @@ function App() {
 }
 
 const styles = StyleSheet.create({
-    todolist: {
-      
+    container: {
+        flex: 1,
+
     },
-    
+
+    todolist: {
+
+    },
+
     todoform: {
-        
+
     },
 });
 
