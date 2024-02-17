@@ -1,21 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+/**
+ * My To Do List App
+ * Author: Jayden Liwanag
+ * Date: 2024-02-17
+ * 
+ * @format
+ */
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Todo List App</Text>
-      <Text>Author: Jayden L</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import React from 'react';
+import {
+    SafeAreaView,
+    StyleSheet,
+    Pressable,
+    View,
+    Text,
+    ScrollView,
+    TextInput,
+    Button
+} from 'react-native';
+
+import ToDoList from './components/ToDoList';
+import ToDoForm from './components/ToDoForm';
+
+function App() {
+    return (
+        <SafeAreaView>
+            <ToDoList style={styles.todolist} />
+            <ToDoForm style={styles.todoform} />
+        </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    todolist: {
+      
+    },
+    
+    todoform: {
+        
+    },
 });
+
+export default App;
