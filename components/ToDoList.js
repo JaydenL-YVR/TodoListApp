@@ -23,14 +23,14 @@ const styles = StyleSheet.create({
     },
     task: {
         padding: 10,
-        backgroundColor: '#F0F0F0',
-        borderRadius: 10,
-        marginBottom: 10,
+        backgroundColor: 'white',
+        borderRadius: 9,
+        marginBottom: 7,
         borderWidth: 2,
         borderColor: '#CCCCCC',
     },
     taskText: {
-        fontSize: 16,
+        fontSize: 17,
         textAlign: 'center',
     },
 });
