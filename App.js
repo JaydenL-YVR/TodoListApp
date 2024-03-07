@@ -1,31 +1,27 @@
-/**
- * My To Do List App
- * Author: Jayden Liwanag
- * Date: 2024-02-17
- * 
- * @format
- */
-
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  Pressable,
-  View,
-  Text,
-  ScrollView,
-  TextInput,
-  Button
 } from 'react-native';
 
 import ToDoList from './components/ToDoList';
 import ToDoForm from './components/ToDoForm';
 
 function App() {
+    const [tasks, setTasks] = useState([
+        'Do laundry',
+        'Go to gym',
+        'Walk dog'
+    ]);
+    
+    const addTask = (newTask) => {
+        setTasks([...tasks, newTask]);
+    };
+
     return (
         <SafeAreaView style={styles.container}>
-            <ToDoList style={styles.todolist} />
-            <ToDoForm style={styles.todoform} />
+            <ToDoList tasks={tasks} />
+            <ToDoForm onAddTask={addTask} />
         </SafeAreaView>
     );
 }
@@ -33,15 +29,9 @@ function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
-    },
-
-    todolist: {
-
-    },
-
-    todoform: {
-
+        backgroundColor: 'teal',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 });
 
