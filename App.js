@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import 'react-native-gesture-handler';
 
-import ToDoList from './components/ToDoList';
-import ToDoForm from './components/ToDoForm';
+
+import HomeScreen from './src/screens/HomeScreen';
+import AboutScreen from './src/screens/AboutScreen';
+
+const Stack = createStackNavigator();
 
 function App() {
     const [tasks, setTasks] = useState([
@@ -13,26 +15,15 @@ function App() {
         'Go to gym',
         'Walk dog'
     ]);
-    
-    const addTask = (newTask) => {
-        setTasks([...tasks, newTask]);
-    };
 
     return (
-        <SafeAreaView style={styles.container}>
-            <ToDoList tasks={tasks} />
-            <ToDoForm onAddTask={addTask} />
-        </SafeAreaView>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="About" component={AboutScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'teal',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
 
 export default App;
